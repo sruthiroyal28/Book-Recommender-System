@@ -1,0 +1,9 @@
+FOUR TYPES OF RECOMMENDER SYSTEMS:
+1. Popularity based recommender system
+    - displays most popular or trendy items
+    - wr = (v/v+m).R
+2. Content based
+    - based on characteristics of items
+3. Collabrative filtering
+    - based on similar users
+4. Hybrid recommender system

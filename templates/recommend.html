@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recommender System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .navbar_text{
+            margin-right:100px;
+        }
+        .image-class{
+            display:block;
+            background-color:rgb(98, 201, 242) ;
+        }
+        .custom-card{
+            padding: 0; /* Remove padding */
+            background-color: transparent; /* Set background color to transparent */
+            border: none;
+        }
+    </style>
+</head>
+<body style="background-color:rgb(98, 201, 242)">
+    
+    <nav class="navbar" style="background-color: rgb(6, 6, 213);">
+        <a class="navbar-brand"  style="font-size: 25px;text-align: center;">Panda Book Recommender System</a>
+        <ul class="nav navbar-nav">
+            <li> <a href="/">Home</a></li>
+            <li> <a href="/">Recommend</a></li>
+            <li> <a href="/">Contact</a></li>
+        </ul>
+        
+
+    </nav>
+
+    <div class ="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 >Recommend Books</h1>
+                <form action="/recommend_books_now"  method="post">
+                    <input name="user_input" type="text" class="form-control form-control-lg"><br>
+                    <input type="submit" class="btn btn-lg bt" style="background-color: rgb(232, 148, 21);">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% if data %}
+                {% for i in data %}
+                    <div class="col-md-3">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <img class="card-img-top" src='{{i[2]}}'>
+                                <p>{{i[0]}}</p>
+                                <p>{{i[1]}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+            {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>
